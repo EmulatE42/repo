@@ -1,0 +1,56 @@
+<div class='panel panel-default'>
+  <div class='panel-heading' style='font-size:large'>
+    <a [routerLink]="['/user']"> My account </a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/tickets']"> Buy ticket</a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/movies']"> Search movies </a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/projections']"> Search projections </a>
+
+  </div>
+
+
+  <div class='panel-body'>
+
+
+    <form id ="nazivfilmaProjekcija">
+      <label> Pretraga naziva filma projekcije: </label>
+      <input type="text" />
+    </form>
+
+    <div class='table-responsive'>
+      <p>Broj projekcija ukupno: {{projs.length}}</p>
+      <table class='table table-striped table-bordered' style="width: 800px;">
+        <thead>
+        <tr>
+          <th>Ime filma</th>
+          <th>Datum projekcije</th>
+          <th>Cena</th>
+          <th>Sala</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr class="table-active" *ngFor="let m of projs | nazivfilmaProjekcija ">
+
+          <td>
+
+            <p>{{m.nazivFilma}}</p>
+          </td>
+          <td>
+
+            <p>{{m.datumProjekcije}}</p>
+          </td>
+          <td>
+
+            <p>{{m.cena}}</p>
+          </td>
+          <td>
+
+            <p>{{m.sala.naziv}}</p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

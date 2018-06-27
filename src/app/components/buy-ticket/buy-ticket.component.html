@@ -1,0 +1,22 @@
+<div class='panel panel-default'>
+  <div class='panel-heading' style='font-size:large'>
+    <a [routerLink]="['/user']"> My account </a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/tickets']"> Buy ticket</a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/movies']"> Search movies </a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/projections']"> Search projections </a>
+
+  </div>
+
+  <div style="position:absolute; left:150px; top:150px;"*ngIf=" projs.length">
+
+<h3>Odaberi projekciju</h3>
+  <select style="width: 250px;" #selectedChoices class="form-control">
+    <option *ngFor="let p of projs" [value]="p.id">{{p.nazivFilma}} {{p.datumProjekcije}}</option>
+  </select>
+    <br><br>
+    <button style="position:absolute; left:250px; top:150px;" (click)="gotovo()" class="btn btn-primary ">Dodaj</button>
+    <br><br><br>
+    <div id = "kraj"></div>
+  </div>
+
+</div>

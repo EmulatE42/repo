@@ -1,0 +1,23 @@
+<div class='panel panel-default'>
+  <div class='panel-heading' style='font-size:large'>
+    <a [routerLink]="['/manager']"> My account </a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/manager/addmovie']"> Add movie</a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/movies']"> Search movies </a> &nbsp; &nbsp; &nbsp;
+    <a [routerLink]="['/user/projections']"> Search projections </a>
+  </div>
+
+  <legend>Napravi novi film</legend>
+
+  <button style="position:absolute; left:360px; top:370px;" (click)="dodao(titleInput.value,titleInput2.value,titleInput3.value,titleInput4.value)" class="btn btn-primary ">Dodaj</button>
+
+  <label for="naziv">Naziv:</label>
+  <input type="text" class="form-control" #titleInput id="naziv" data-toggle="modal" style="width: 350px; ">
+  <label for="zanr">Zanr:</label>
+  <input type="text" class="form-control" #titleInput2 id="zanr" data-toggle="modal" style="width: 350px;">
+  <label for="trajanje">Trajanje:</label>
+  <input type="text" class="form-control" #titleInput3 id="trajanje" data-toggle="modal" style="width: 350px;">
+  <label for="opis">Opis:</label>
+  <input type="text" class="form-control" #titleInput4 id="opis" data-toggle="modal" style="width: 350px;">
+
+</div>
+
